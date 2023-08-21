@@ -124,3 +124,16 @@
     }
   }
 }
+
+.formLogo {
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    text-align: center;
+    padding-bottom: 32px;
+    font-family: var(--tilt-prism);
+    color: var(--primary-color);
+    font-size: var(--xl-font);
+  }
+}

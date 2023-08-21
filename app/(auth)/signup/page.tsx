@@ -55,6 +55,9 @@ const SignUpPage: React.FC = () => {
         <div className={styles.form}>
           <div className={styles.form__overlay}>
             <form>
+              <Link href={'/'} className={styles.formLogo}>
+                Ecocentury
+              </Link>
               <div className={styles.form__overlay_header}>
                 <span>Sign up</span>
                 <p>
