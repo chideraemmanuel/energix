@@ -47,7 +47,8 @@
   --primary-color: #34bb8b;
   --secondary-color: #688a63;
 
-  --accent: #e8f0e6;
+  // --accent: #dff8d5;
+  --accent: #f2f2f2;
 
   // TEXT COLORS
   --primary-text-color: #000;
@@ -60,7 +61,7 @@
 
   // HEADER
   --header-bg: hsla(0, 0%, 100%, 0.9);
-  --header-bg-blur: saturate(180%) blur(5px);
+  --header-bg-blur: saturate(180%) blur(20px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -109,8 +110,7 @@ body {
 
 body {
   color: var(--primary-text-color);
-  // background-color: var(--secondary-color);
-  background-color: var(--accent);
+  background-color: #fff;
 }
 
 a {
@@ -119,7 +119,6 @@ a {
 }
 
 nav {
-  // background-color: red;
   background: var(--header-bg);
   backdrop-filter: var(--header-bg-blur);
   padding: 20px var(--side-padding);
@@ -129,8 +128,31 @@ nav {
   z-index: 10;
 }
 
+footer {
+  // padding: max(10vh, 70px) var(--side-padding);
+  padding: 24px var(--side-padding);
+  border-bottom: var(--border);
+  // background-color: red;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+.swiper-slide {
+  width: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet-active,
+.swiper-pagination-bullet-active-main {
+  background-color: var(--primary-color) !important;
 }

@@ -1,0 +1,66 @@
+.bg {
+  // for bacground
+  padding: max(10vh, 70px) var(--side-padding);
+  border-bottom: var(--border);
+}
+
+.container {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(20px, 5vw, 40px);
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__text {
+    &_header {
+      padding-bottom: 10px;
+
+      @media screen and (max-width: 768px) {
+        padding-bottom: 24px;
+      }
+
+      span {
+        font-size: var(--sm-font);
+        color: var(--primary-color);
+      }
+
+      h4 {
+        font-size: var(--md-font);
+        padding-bottom: 7px;
+
+        @media screen and (max-width: 768px) {
+          padding-bottom: 10px;
+        }
+      }
+
+      p {
+        font-size: var(--sm-font);
+        color: var(--secondary-text-color);
+        line-height: 1.5;
+      }
+    }
+
+    &_list {
+      //   padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @media screen and (max-width: 768px) {
+        gap: 15px;
+      }
+    }
+  }
+
+  &__image {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

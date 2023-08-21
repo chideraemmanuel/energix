@@ -1,0 +1,58 @@
+.bg {
+  // for bacground blob
+  //   background-position: center center / cover !important;
+  //   background-repeat: no-repeat !important;
+  //   background-size: 100%;
+
+  padding: max(10vh, 70px) var(--side-padding);
+  border-bottom: var(--border);
+}
+
+.container {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+
+  &__header {
+    width: min(80%, 500px);
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 48px;
+
+    h2 {
+      text-align: center;
+      text-transform: capitalize;
+      padding-bottom: 15px;
+      font-size: var(--xl-font);
+      background-image: var(--text-gradient);
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      //   letter-spacing: -0.05em;
+    }
+
+    p {
+      font-size: var(--base-font);
+      color: var(--secondary-text-color);
+    }
+  }
+
+  &__grid {
+    // width: min(100%, 1000px);
+    // margin: 0 auto;
+    // padding: 15px 0 24px;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // gap: 15px;
+
+    // @media screen and (max-width: 640px) {
+    //   grid-template-columns: 1fr;
+    //   gap: 20px;
+    // }
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

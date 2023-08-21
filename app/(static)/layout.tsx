@@ -13,6 +13,7 @@ import 'swiper/scss';
 import 'swiper/scss/effect-fade';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
+import Footer from '@/containers/footer/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,6 +36,9 @@ export default function RootLayout({
             <Navbar />
           </nav>
           {children}
+          <footer>
+            <Footer />
+          </footer>
         </body>
       </ReduxProvider>
     </html>

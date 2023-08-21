@@ -11,15 +11,16 @@ const Hero: React.FC = () => {
       <div className={styles.header__overlay}></div>
 
       <div className={styles.header__content}>
-        <h2>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nisi!
-        </h2>
+        <h1>
+          Driving Sustainable Innovations and Powering the Future of Global
+          Energy.
+        </h1>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum odit
-          minima, deserunt dolor assumenda consequuntur ducimus, iste doloribus
-          impedit possimus laborum tenetur magnam autem saepe sapiente fugit.
-          Obcaecati, illo officia.
+          Navigating the complexities of the modern energy sector demands
+          foresight and determination. Committed to this journey, we are
+          redefining boundaries and setting new benchmarks for a sustainable
+          tomorrow.
         </p>
 
         <div className={styles.header__content_buttons}>

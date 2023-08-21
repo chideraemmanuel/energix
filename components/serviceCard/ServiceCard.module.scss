@@ -1,0 +1,29 @@
+.card {
+  width: min(300px, 80%);
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.2);
+  border-radius: 5px;
+  text-align: center;
+  padding: 30px 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // gap: 32px;
+
+  svg {
+    font-size: var(--xl-font);
+    box-sizing: content-box;
+    padding-bottom: 20px;
+  }
+
+  h3 {
+    font-size: var(--base-font);
+    padding-bottom: 10px;
+  }
+
+  p {
+    font-size: var(--sm-font);
+    color: var(--secondary-text-color);
+  }
+}
