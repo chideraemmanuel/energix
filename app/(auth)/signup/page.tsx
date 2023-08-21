@@ -13,11 +13,16 @@ import {
   clearSignUpPasswordError,
   closeSignUpModal,
   setSignUpConfirmPassword,
+  setSignUpConfirmPasswordError,
   setSignUpEmail,
   setSignUpName,
   setSignUpPassword,
 } from '@/redux/slices/signInSlice';
 import SignInModal from '@/containers/signInModal/SignInModal';
+import { useSignUp } from '@/lib/hooks/useSignUp';
+import { useRouter } from 'next/navigation';
+import { FormEvent } from 'react';
+import FullScreenLoader from '@/components/fullScreenLoader/FullScreenLoader';
 
 const SignUpPage: React.FC = () => {
   const { name, email, password, confirmPassword } = useSelector(
@@ -30,8 +35,22 @@ const SignUpPage: React.FC = () => {
 
   const dispatch = useDispatch();
 
+  const { mutate: signUp, isLoading: isSigningUp } = useSignUp();
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    await signUp({
+      name: name.value,
+      email: email.value,
+      password: password.value,
+      confirmPassword: confirmPassword.value,
+    });
+  };
+
   return (
     <>
+      {isSigningUp && <FullScreenLoader />}
       {signUpModalActive && <SignInModal />}
       <div className={styles.grid} onClick={() => dispatch(closeSignUpModal())}>
         <div className={styles.info}>
@@ -54,7 +73,7 @@ const SignUpPage: React.FC = () => {
 
         <div className={styles.form}>
           <div className={styles.form__overlay}>
-            <form>
+            <form onSubmit={(e) => handleSubmit(e)}>
               <Link href={'/'} className={styles.formLogo}>
                 Ecocentury
               </Link>
@@ -72,8 +91,8 @@ const SignUpPage: React.FC = () => {
                   label="Name"
                   value={name.value}
                   setValue={setSignUpName}
-                  // error={name.error}
-                  error={'this is an error'}
+                  error={name.error}
+                  // error={'this is an error'}
                   clearError={clearSignUpNameError}
                 />
                 <FormInput
@@ -82,8 +101,8 @@ const SignUpPage: React.FC = () => {
                   label="Email"
                   value={email.value}
                   setValue={setSignUpEmail}
-                  // error={email.error}
-                  error={'this is an error'}
+                  error={email.error}
+                  // error={'this is an error'}
                   clearError={clearSignUpEmailError}
                 />
                 <FormInput
@@ -92,8 +111,8 @@ const SignUpPage: React.FC = () => {
                   label="Password"
                   value={password.value}
                   setValue={setSignUpPassword}
-                  // error={password.error}
-                  error={'this is an error'}
+                  error={password.error}
+                  // error={'this is an error'}
                   clearError={clearSignUpPasswordError}
                 />
                 <FormInput
@@ -102,8 +121,8 @@ const SignUpPage: React.FC = () => {
                   label="Confirm Password"
                   value={confirmPassword.value}
                   setValue={setSignUpConfirmPassword}
-                  // error={confirmPassword.error}
-                  error={'this is an error'}
+                  error={confirmPassword.error}
+                  // error={'this is an error'}
                   clearError={clearSignUpConfirmPasswordError}
                 />
 

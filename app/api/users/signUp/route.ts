@@ -33,7 +33,9 @@ export async function POST(request: NextRequest) {
   }
 
   // connect to database
+  console.log('connecting...');
   await connectToDb();
+  console.log('connected');
 
   // CHECK IF USER ALREADY EXISTS
   const user = await User.findOne({ email });
@@ -85,7 +87,7 @@ export async function POST(request: NextRequest) {
       {
         status: 201,
         headers: {
-          'Set-Cookie': `token=${token}; httpOnly`,
+          'Set-Cookie': `token=${token}; httpOnly; path=/`,
         },
       }
     );

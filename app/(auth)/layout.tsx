@@ -2,6 +2,7 @@ import ReduxProvider from '@/redux/ReduxProvider';
 import '../globals.scss';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 
 import 'swiper/scss';
 import 'swiper/scss/effect-fade';
@@ -25,6 +26,7 @@ export default function AuthLayout({
       {/* <body className={inter.className}>{children}</body> */}
       <ReduxProvider>
         <body>{children}</body>
+        <Toaster />
       </ReduxProvider>
     </html>
   );
