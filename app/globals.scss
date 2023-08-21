@@ -18,6 +18,7 @@
   --bricolage-grotesque: 'Bricolage Grotesque', sans-serif;
   --tilt-prism: 'Tilt Prism', cursive;
 
+  --xs-font: clamp(0.75rem, 0.7021rem + 0.2128vw, 0.875rem);
   --sm-font: clamp(0.8rem, 0.16vw + 0.76rem, 0.89rem);
   --base-font: clamp(1rem, 0.33vw + 0.92rem, 1.19rem);
   --md-font: clamp(1.25rem, 0.59vw + 1.11rem, 1.58rem);

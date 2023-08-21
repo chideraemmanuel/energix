@@ -4,11 +4,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navbar from '@/containers/navbar/Navbar';
 
-// import "swiper/css";
-// import "swiper/css/effect-fade";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-
 import 'swiper/scss';
 import 'swiper/scss/effect-fade';
 import 'swiper/scss/navigation';
