@@ -33,9 +33,9 @@ export async function POST(request: NextRequest) {
   }
 
   // connect to database
-  console.log('connecting...');
+  // console.log('connecting...');
   await connectToDb();
-  console.log('connected');
+  // console.log('connected');
 
   // CHECK IF USER ALREADY EXISTS
   const user = await User.findOne({ email });

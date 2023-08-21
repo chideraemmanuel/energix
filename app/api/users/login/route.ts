@@ -21,6 +21,13 @@ export async function POST(request: NextRequest) {
 
   const { email, password } = body;
 
+  if (!email || !password) {
+    return NextResponse.json(
+      { message: 'Please supply the required credentials' },
+      { status: 400 }
+    );
+  }
+
   // connect to database
   await connectToDb();
 

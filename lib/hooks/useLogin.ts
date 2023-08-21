@@ -1,24 +1,20 @@
 import {
   resetAllForms,
-  setSignUpConfirmPasswordError,
-  setSignUpEmailError,
-  setSignUpNameError,
-  setSignUpPasswordError,
+  setLoginEmailError,
+  setLoginPasswordError,
 } from '@/redux/slices/signInSlice';
-import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast/headless';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 
-interface SignUpCredentials {
-  name: string;
+interface LoginCredentials {
   email: string;
   password: string;
-  confirmPassword: string;
 }
 
-export const useSignUp = () => {
+export const useLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
@@ -26,27 +22,19 @@ export const useSignUp = () => {
 
   const emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,5})(\.[a-z]{2,5})?$/;
 
-  const mutate = async (credentials: SignUpCredentials) => {
-    const { name, email, password, confirmPassword } = credentials;
+  const mutate = async (credentials: LoginCredentials) => {
+    const { email, password } = credentials;
 
-    if (name.length === 0) {
-      dispatch(setSignUpNameError('Please fill out this field'));
-      return;
-    }
     if (email.length === 0) {
-      dispatch(setSignUpEmailError('Please fill out this field'));
+      dispatch(setLoginEmailError('Please enter your email'));
       return;
     }
     if (!emailRegex.test(email)) {
-      dispatch(setSignUpEmailError('Please enter a valid email'));
+      dispatch(setLoginEmailError('Please enter a valid email'));
       return;
     }
-    if (password.length < 6) {
-      dispatch(setSignUpPasswordError('Password should be up to 6 characters'));
-      return;
-    }
-    if (confirmPassword !== password) {
-      dispatch(setSignUpConfirmPasswordError('Passwords do not match'));
+    if (password.length === 0) {
+      dispatch(setLoginPasswordError('Please enter your password'));
       return;
     }
 
@@ -59,9 +47,8 @@ export const useSignUp = () => {
 
     try {
       const response = await axios.post(
-        '/api/users/signup',
+        '/api/users/login',
         JSON.stringify({
-          name,
           email,
           password,
         })
@@ -78,9 +65,15 @@ export const useSignUp = () => {
       //   console.log(error);
       //   console.log(error.response.data.error);
 
-      //   @ts-ignore
-      if (error.response.data.error === 'Email has already been used') {
-        dispatch(setSignUpEmailError('Email has already been used'));
+      if (
+        //   @ts-ignore
+        error.response.data.error === 'No user with the provided email' ||
+        //   @ts-ignore
+        error.response.data.error === 'Incorrect password'
+      ) {
+        //    dispatch(setLoginEmailError('No user with the provided email'));
+        //   @ts-ignore
+        dispatch(setLoginPasswordError(error.response.data.error));
         return;
       }
 
