@@ -3,6 +3,12 @@ import image2 from '@/assets/hero2.jpg';
 import { StaticImageData } from 'next/image';
 import { FaRecycle, FaShieldAlt } from 'react-icons/fa';
 import { IconType } from 'react-icons';
+import { FiCalendar } from 'react-icons/fi';
+import {
+  openFundingDropdown,
+  openPartnershipDropdown,
+  openWithdrawalDropdown,
+} from './redux/slices/navigationMenuSlice';
 
 export const navigationLinks = [
   {
@@ -117,4 +123,115 @@ export const investmentPercs: InvestmentPercTypes[] = [
     iconBg: 'orange',
     iconColor: 'white',
   },
+];
+
+export const dashboardLinks = [
+  {
+    title: 'Overview',
+    to: '/dashboard/overview',
+    icon: FiCalendar,
+  },
+  {
+    title: 'Funding',
+    icon: FiCalendar,
+    openDropdown: openFundingDropdown,
+    links: [
+      {
+        title: 'Deposit',
+        to: '/dashboard/deposit',
+      },
+      {
+        title: 'Deposit History',
+        to: '/dashboard/deposit-history',
+      },
+    ],
+  },
+  {
+    title: 'Withdrawal',
+    icon: FiCalendar,
+    openDropdown: openWithdrawalDropdown,
+    links: [
+      {
+        title: 'Withdraw',
+        to: '/dashboard/withdraw',
+      },
+      {
+        title: 'Withdrawal History',
+        to: '/dashboard/withdrawal-history',
+      },
+    ],
+  },
+  {
+    title: 'Cart',
+    to: '/dashboard/cart',
+    icon: FiCalendar,
+  },
+  {
+    title: 'Account Statement',
+    to: '/dashboard/account-statement',
+    icon: FiCalendar,
+  },
+  {
+    title: 'Portfolios',
+    to: '/dashboard/portfolios',
+    icon: FiCalendar,
+  },
+  {
+    title: 'Retirement',
+    to: '/dashboard/retirement',
+    icon: FiCalendar,
+  },
+  {
+    title: 'Partnership',
+    icon: FiCalendar,
+    openDropdown: openPartnershipDropdown,
+    links: [
+      {
+        title: 'Individual',
+        to: '/dashboard/partnership/individual',
+      },
+      {
+        title: 'Business',
+        to: '/dashboard/partnership/individual',
+      },
+    ],
+  },
+  {
+    title: 'Membership',
+    to: '/dashboard/membership',
+    icon: FiCalendar,
+  },
+  {
+    title: 'Referral',
+    to: '/dashboard/referral',
+    icon: FiCalendar,
+  },
+  {
+    title: 'Achievements',
+    to: '/dashboard/achievements',
+    icon: FiCalendar,
+  },
+  {
+    title: 'Notifications',
+    to: '/dashboard/notifications',
+    icon: FiCalendar,
+  },
+];
+
+export const dashboardBottomLinks = [
+  {
+    title: 'Support',
+    to: '/dashboard/support',
+    icon: FiCalendar,
+  },
+  {
+    title: 'Settings',
+    to: '/dashboard/settings',
+    icon: FiCalendar,
+  },
+  // {
+  //   title: 'Logout',
+  //   to: '/dashboard/logout',
+  //   icon: FiCalendar,
+  // },
 ];
