@@ -8,6 +8,7 @@ export interface NavMenuStateTypes {
     partnership: 'active' | 'inactive';
   };
   dashoardSidebarActive: boolean;
+  dashboardHeaderLinksActive: boolean;
 }
 
 const initialState: NavMenuStateTypes = {
@@ -17,7 +18,8 @@ const initialState: NavMenuStateTypes = {
     withdrawal: 'inactive',
     partnership: 'inactive',
   },
-  dashoardSidebarActive: true,
+  dashoardSidebarActive: false,
+  dashboardHeaderLinksActive: false,
 };
 
 const navigationMenuSlice = createSlice({
@@ -63,6 +65,16 @@ const navigationMenuSlice = createSlice({
     closeDashboardSidebar: (state: NavMenuStateTypes) => {
       state.dashoardSidebarActive = false;
     },
+    toggleDashboardHeaderLinks: (state: NavMenuStateTypes) => {
+      if (state.dashboardHeaderLinksActive) {
+        state.dashboardHeaderLinksActive = false;
+      } else {
+        state.dashboardHeaderLinksActive = true;
+      }
+    },
+    closeDashboardHeaderLinks: (state: NavMenuStateTypes) => {
+      state.dashboardHeaderLinksActive = false;
+    },
   },
 });
 
@@ -77,6 +89,8 @@ export const {
   closePartnershipDropdown,
   openDashboardSidebar,
   closeDashboardSidebar,
+  toggleDashboardHeaderLinks,
+  closeDashboardHeaderLinks,
 } = navigationMenuSlice.actions;
 
 export default navigationMenuSlice.reducer;

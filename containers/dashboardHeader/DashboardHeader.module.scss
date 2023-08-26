@@ -3,6 +3,26 @@
   align-items: center;
   justify-content: space-between;
 
+  .toggle {
+    display: none;
+
+    @media screen and (max-width: 500px) {
+      display: block;
+    }
+
+    > button {
+      display: flex;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      align-items: center;
+
+      svg {
+        font-size: var(--md-font);
+      }
+    }
+  }
+
   .logo {
     display: flex;
     align-items: center;
@@ -19,6 +39,10 @@
         display: flex;
       }
 
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
+
       svg {
         font-size: var(--md-font);
       }
@@ -29,5 +53,11 @@
     //   color: var(--primary-color);
     //   font-size: var(--md-font);
     // }
+  }
+
+  .search {
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
   }
 }

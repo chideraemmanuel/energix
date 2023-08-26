@@ -12,6 +12,7 @@ import {
   openDashboardSidebar,
 } from '@/redux/slices/navigationMenuSlice';
 import Logo from '@/components/logo/Logo';
+import DashboardHeaderLinks from '../dashboardHeaderLinks/DashboardHeaderLinks';
 
 const DashboardHeader: React.FC = () => {
   const { dashoardSidebarActive } = useSelector(
@@ -22,6 +23,23 @@ const DashboardHeader: React.FC = () => {
 
   return (
     <div className={styles.header}>
+      <div className={styles.toggle}>
+        {!dashoardSidebarActive ? (
+          <button onClick={() => dispatch(openDashboardSidebar())}>
+            <FiMenu />
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              dispatch(closeAllDropdowns());
+              dispatch(closeDashboardSidebar());
+            }}
+          >
+            <FiX />
+          </button>
+        )}
+      </div>
+
       <div className={styles.logo}>
         {!dashoardSidebarActive && (
           <button onClick={() => dispatch(openDashboardSidebar())}>
@@ -45,10 +63,12 @@ const DashboardHeader: React.FC = () => {
         {/* </div> */}
       </div>
 
-      <DashboardSearchInput />
+      <div className={styles.search}>
+        <DashboardSearchInput />
+      </div>
 
       <div className={styles.links}>
-        <span>Header Links</span>
+        <DashboardHeaderLinks />
       </div>
     </div>
   );

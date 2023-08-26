@@ -3,6 +3,7 @@ import DashboardNavbarLinks from '../dashboardNavbarLinks/DashboardNavbarLinks';
 import TabletDashboardSidebarLinks from '../tabletDashboardSidebarLinks/TabletDashboardSidebarLinks';
 import styles from './DashboardSidebar.module.scss';
 import { StoreTypes } from '@/redux/store';
+import MobileDashboardSidebar from '../mobileDashboardSidebar/MobileDashboardSidebar';
 
 const DashboardSidebar: React.FC = () => {
   const { dashoardSidebarActive } = useSelector(
@@ -23,6 +24,16 @@ const DashboardSidebar: React.FC = () => {
         style={dashoardSidebarActive ? { width: '40vw' } : undefined}
       >
         <TabletDashboardSidebarLinks />
+      </div>
+
+      {/* {dashoardSidebarActive && (
+        <div className={styles.mobile}>
+          <MobileDashboardSidebar />
+        </div>
+      )} */}
+
+      <div className={styles.mobile}>
+        <MobileDashboardSidebar />
       </div>
     </div>
   );

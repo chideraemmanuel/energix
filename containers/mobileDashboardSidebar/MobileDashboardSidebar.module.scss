@@ -1,0 +1,25 @@
+.sidebar {
+  background-color: cadetblue;
+  position: fixed;
+  z-index: 12;
+  width: 60vw;
+  top: 0;
+  left: -100%;
+  bottom: 0;
+  transition: 0.3s ease;
+
+  .header {
+    height: 100px;
+  }
+
+  .links {
+    padding: 10px;
+  }
+}
+
+.overlay {
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  position: fixed;
+  inset: 0;
+  z-index: 11;
+}

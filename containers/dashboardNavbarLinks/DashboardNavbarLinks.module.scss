@@ -5,8 +5,12 @@
   flex-direction: column;
   gap: 5px;
 
-  @media screen and (max-width: 820px) {
-    display: none;
+  // @media screen and (max-width: 820px) {
+  //   display: none;
+  // }
+
+  @media screen and (max-width: 500px) {
+    align-items: flex-start;
   }
 
   &::-webkit-scrollbar {
@@ -46,17 +50,23 @@
     padding: 10px;
   }
 
+  @media screen and (max-width: 500px) {
+    justify-content: flex-start;
+  }
+
   svg {
   }
 
   span {
-    @media screen and (max-width: 820px) {
-      display: none;
-    }
+    // @media screen and (max-width: 820px) {
+    //   display: none;
+    // }
   }
 }
 
 .dropdown {
+  width: 100%;
+
   &__trigger {
     border: none;
     background-color: yellow;
@@ -75,6 +85,10 @@
       padding: 10px;
     }
 
+    @media screen and (max-width: 500px) {
+      justify-content: space-between;
+    }
+
     > div {
       display: flex;
       align-items: center;
@@ -85,17 +99,17 @@
       }
 
       span {
-        @media screen and (max-width: 820px) {
-          display: none;
-        }
+        // @media screen and (max-width: 820px) {
+        //   display: none;
+        // }
       }
     }
 
     > svg {
       // chevron
-      @media screen and (max-width: 820px) {
-        display: none;
-      }
+      // @media screen and (max-width: 820px) {
+      //   display: none;
+      // }
     }
   }
 
