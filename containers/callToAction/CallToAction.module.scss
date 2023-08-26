@@ -1,12 +1,16 @@
 .bg {
   padding: max(10vh, 70px) var(--side-padding);
-  border-bottom: var(--border);
+  // border-bottom: var(--border);
   //   background-color: red;
-  background: radial-gradient(
-    759px at 14% 22.3%,
-    rgb(10, 64, 88) 0%,
-    rgb(15, 164, 102) 90%
-  );
+  // background: radial-gradient(
+  //   759px at 14% 22.3%,
+  //   rgb(10, 64, 88) 0%,
+  //   rgb(15, 164, 102) 90%
+  // );
+
+  background-color: var(--footer-bg);
+  border-bottom: 1px solid var(--gray-500);
+  // border-bottom: 1px solid #ccfbe5;
 }
 
 .container {

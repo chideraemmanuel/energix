@@ -4,6 +4,7 @@ import { IconType } from 'react-icons';
 import { InvestmentPercTypes } from '@/constants';
 
 const ListItem: React.FC<InvestmentPercTypes> = ({
+  header,
   summary,
   icon: Icon,
   iconBg,
@@ -11,9 +12,14 @@ const ListItem: React.FC<InvestmentPercTypes> = ({
 }) => {
   return (
     <div className={styles.item}>
-      {/* <FiShield style={{ color: 'red', backgroundColor: 'gray' }} /> */}
-      <Icon style={{ color: iconColor, backgroundColor: iconBg }} />
-      <span>{summary}</span>
+      {/* <Icon style={{ color: iconColor, backgroundColor: iconBg }} /> */}
+      <Icon
+        style={{ color: '#fff', backgroundColor: 'rgba(52, 187, 139, 0.5)' }}
+      />
+      <div className={styles.item__content}>
+        <h4>{header}</h4>
+        <span>{summary}</span>
+      </div>
     </div>
   );
 };

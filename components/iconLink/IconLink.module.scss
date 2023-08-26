@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   gap: 3px;
+  color: var(--gray-800);
 
   &::after {
     content: '';
@@ -11,6 +12,7 @@
     width: 100%;
     height: 2px;
     background-color: var(--primary-color);
+    // background-color: #ccfbe5;
     transform: scaleX(50%);
     transform-origin: center left;
     transition: 0.3s ease;
@@ -18,6 +20,7 @@
 
   &:hover {
     color: var(--primary-color);
+    // color: #ccfbe5;
 
     &::after {
       transform: scaleX(100%);
@@ -26,6 +29,7 @@
     svg {
       transform: translateX(5px);
       color: var(--primary-color);
+      // color: #ccfbe5;
     }
   }
 

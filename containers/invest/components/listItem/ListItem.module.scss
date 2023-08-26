@@ -1,12 +1,22 @@
 .item {
-  //   display: flex;
-  //   align-items: center;
-  //   gap: 3px;
-
   display: grid;
   grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 5px;
+  align-items: flex-start;
+  gap: 10px;
+  // // border: 1px solid #ccfbe5;
+  // padding: 15px;
+  // border-radius: 10px;
+
+  &__content {
+    h4 {
+      padding-bottom: 5px;
+    }
+
+    span {
+      font-size: var(--sm-font);
+      line-height: 1.5;
+    }
+  }
 
   svg {
     flex: auto;
@@ -15,11 +25,5 @@
     border-radius: 50%;
     // background-color: yellow;
     font-size: var(--base-font);
-  }
-
-  span {
-    // flex: 1;
-    font-size: var(--sm-font);
-    line-height: 1.5;
   }
 }

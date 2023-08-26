@@ -1,6 +1,12 @@
 import { FiChevronDown, FiFileMinus } from 'react-icons/fi';
 import styles from './DashboardNavbarDropdown.module.scss';
 import Link from 'next/link';
+import { IconType } from 'react-icons';
+
+interface Props {
+  title: string;
+  icon: IconType;
+}
 
 const DashboardNavbarDropdown: React.FC = () => {
   return (

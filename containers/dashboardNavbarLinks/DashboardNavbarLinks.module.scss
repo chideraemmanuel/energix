@@ -1,11 +1,13 @@
 .container {
-  margin-top: 20px;
-  padding: 20px 10px;
+  max-height: calc(100vh - 70px - var(--xl-font));
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  height: 70vh;
-  overflow-y: scroll;
+
+  @media screen and (max-width: 820px) {
+    display: none;
+  }
 
   &::-webkit-scrollbar {
     width: 5px;
@@ -38,10 +40,19 @@
   gap: 7px;
   font-size: var(--base-font);
 
+  @media screen and (max-width: 820px) {
+    // display: block;
+    justify-content: center;
+    padding: 10px;
+  }
+
   svg {
   }
 
   span {
+    @media screen and (max-width: 820px) {
+      display: none;
+    }
   }
 }
 
@@ -58,10 +69,33 @@
     font-size: var(--base-font);
     cursor: pointer;
 
+    @media screen and (max-width: 820px) {
+      // display: block;
+      justify-content: center;
+      padding: 10px;
+    }
+
     > div {
       display: flex;
       align-items: center;
       gap: 7px;
+
+      svg {
+        box-sizing: content-box;
+      }
+
+      span {
+        @media screen and (max-width: 820px) {
+          display: none;
+        }
+      }
+    }
+
+    > svg {
+      // chevron
+      @media screen and (max-width: 820px) {
+        display: none;
+      }
     }
   }
 

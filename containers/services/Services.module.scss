@@ -6,6 +6,54 @@
 
   padding: max(10vh, 70px) var(--side-padding);
   border-bottom: var(--border);
+
+  padding: max(10vh, 70px) var(--side-padding);
+  border-bottom: var(--border);
+  //   background-color: red;
+  // background: radial-gradient(
+  //   759px at 14% 22.3%,
+  //   rgb(10, 64, 88) 0%,
+  //   rgb(15, 164, 102) 90%
+  // );
+  // background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+
+  // background: rgb(176, 219, 128);
+  // background: radial-gradient(
+  //   circle,
+  //   rgba(176, 219, 128, 1) 50%,
+  //   rgba(121, 204, 131, 1) 100%
+  // );
+
+  // background-image: linear-gradient(
+  //   to right top,
+  //   #235e71,
+  //   #0e6f7f,
+  //   #00818a,
+  //   #009390,
+  //   #00a491
+  // );
+
+  // background-image: linear-gradient(
+  //   to right top,
+  //   #e4f2e1,
+  //   #dff4e0,
+  //   #daf6e1,
+  //   #d3f9e2,
+  //   #ccfbe5
+  // );
+
+  // background-image: linear-gradient(
+  //   to right bottom,
+  //   #e4f2e1,
+  //   #dff4e0,
+  //   #daf6e1,
+  //   #d3f9e2,
+  //   #ccfbe5
+  // );
+
+  background-color: #e4f2e1;
+
+  color: #fff;
 }
 
 .container {
@@ -24,6 +72,7 @@
       padding-bottom: 15px;
       font-size: var(--xl-font);
       background-image: var(--text-gradient);
+      // background-image: var(--light-text-gradient);
       background-clip: text;
       color: transparent;
       -webkit-background-clip: text;
@@ -34,6 +83,7 @@
     p {
       font-size: var(--base-font);
       color: var(--secondary-text-color);
+      // color: var(--gray-400);
     }
   }
 

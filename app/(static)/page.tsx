@@ -16,8 +16,8 @@ const HomePage: React.FC = () => {
       <main>
         <Services />
         <FullScreenSlider data={resourcesSliderItems} />
-        {/* Carousel (Ecocentury startups, and co...) */}
         <Invest />
+        {/* Carousel (Ecocentury startups, and co...) */}
         <CallToAction />
       </main>
     </div>

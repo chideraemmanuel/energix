@@ -4,11 +4,6 @@ import { StaticImageData } from 'next/image';
 import { FaRecycle, FaShieldAlt } from 'react-icons/fa';
 import { IconType } from 'react-icons';
 import { FiCalendar } from 'react-icons/fi';
-import {
-  openFundingDropdown,
-  openPartnershipDropdown,
-  openWithdrawalDropdown,
-} from './redux/slices/navigationMenuSlice';
 
 export const navigationLinks = [
   {
@@ -33,6 +28,39 @@ export const navigationLinks = [
   },
 ];
 
+export const footerLinks = [
+  {
+    header: 'Header',
+    links: [
+      {
+        title: 'About us',
+        to: '/',
+      },
+      {
+        title: 'Our works',
+        to: '/',
+      },
+      {
+        title: 'Community',
+        to: '/',
+      },
+    ],
+  },
+  {
+    header: 'Header Header',
+    links: [
+      {
+        title: 'Investors',
+        to: '/',
+      },
+      {
+        title: 'Privacy Policy',
+        to: '/',
+      },
+    ],
+  },
+];
+
 export interface ServicesTypes {
   name: string;
   summary: string;
@@ -42,17 +70,20 @@ export interface ServicesTypes {
 export const services = [
   {
     name: 'Innovative Energy Solutions',
-    summary: `Our team constantly delves into research and development to discover and implement the latest in energy technologies. Whether it's harnessing the power of renewables or optimizing traditional energy sources, we're committed to bringing the best to our clients.`,
+    // summary: `Our team constantly delves into research and development to discover and implement the latest in energy technologies. Whether it's harnessing the power of renewables or optimizing traditional energy sources, we're committed to bringing the best to our clients.`,
+    summary: `Whether it's harnessing the power of renewables or optimizing traditional energy sources, we're committed to bringing the best to our clients.`,
     icon: FaRecycle,
   },
   {
     name: 'Lower Emissions Commitment',
-    summary: `Environmental responsibility is central to our ethos. We are deeply invested in projects and technologies that drastically reduce emissions. Through a combination of advanced methodologies, state-of-the-art equipment, and a holistic approach to energy production, we're committed to diminishing our carbon footprint and aiding global efforts to combat climate change.`,
+    // summary: `Environmental responsibility is central to our ethos. We are deeply invested in projects and technologies that drastically reduce emissions. Through a combination of advanced methodologies, state-of-the-art equipment, and a holistic approach to energy production, we're committed to diminishing our carbon footprint and aiding global efforts to combat climate change.`,
+    summary: `Environmental responsibility is central to our ethos. We are deeply invested in projects and technologies that drastically reduce emissions.`,
     icon: FaRecycle,
   },
   {
     name: 'Sustainability Consulting',
-    summary: `With an eye on the future, we provide consultancy services to businesses looking to transition into more sustainable energy practices. Our experts guide you through the process, ensuring both environmental responsibility and economic viability.`,
+    // summary: `With an eye on the future, we provide consultancy services to businesses looking to transition into more sustainable energy practices. Our experts guide you through the process, ensuring both environmental responsibility and economic viability.`,
+    summary: `Our experts guide you through the process, ensuring both environmental responsibility and economic viability.`,
     icon: FaRecycle,
   },
   {
@@ -68,7 +99,8 @@ export const services = [
   },
   {
     name: 'Energy Access and Equity',
-    summary: `At the heart of our mission is the belief that everyone deserves reliable and affordable energy. We champion initiatives that bridge the energy gap, ensuring that even the most remote and underserved communities are not left in the dark. Our projects prioritize not just access, but also fairness, guaranteeing that energy solutions are distributed equitably, promoting inclusive growth and development.`,
+    // summary: `At the heart of our mission is the belief that everyone deserves reliable and affordable energy. We champion initiatives that bridge the energy gap, ensuring that even the most remote and underserved communities are not left in the dark. Our projects prioritize not just access, but also fairness, guaranteeing that energy solutions are distributed equitably, promoting inclusive growth and development.`,
+    summary: `Our projects prioritize not just access, but also fairness, guaranteeing that energy solutions are distributed equitably, promoting inclusive growth and development.`,
     icon: FaRecycle,
   },
 ];
@@ -98,6 +130,7 @@ export const resourcesSliderItems: SlideItemTypes[] = [
 ];
 
 export interface InvestmentPercTypes {
+  header: string;
   summary: string;
   icon: IconType;
   iconColor: string;
@@ -106,19 +139,22 @@ export interface InvestmentPercTypes {
 
 export const investmentPercs: InvestmentPercTypes[] = [
   {
-    summary: `Deep Industry Expertise: Our team comprises industry veterans who have been at the forefront of the energy sector's evolution. This expertise ensures that your investments are grounded in knowledge and experience.`,
+    header: 'Deep Industry Expertise',
+    summary: `Our team comprises industry veterans who have been at the forefront of the energy sector's evolution. This expertise ensures that your investments are grounded in knowledge and experience.`,
     icon: FaShieldAlt,
     iconBg: 'red',
     iconColor: 'white',
   },
   {
-    summary: `Future-Oriented Approach: We're not just about tapping into existing opportunities; we're about creating them. Our research and development initiatives constantly explore emerging technologies and trends, ensuring our investors are always a step ahead.`,
+    header: 'Future-Oriented Approach',
+    summary: `We're not just about tapping into existing opportunities; we're about creating them. Our research and development initiatives constantly explore emerging technologies and trends, ensuring our investors are always a step ahead.`,
     icon: FaShieldAlt,
     iconBg: 'blue',
     iconColor: 'white',
   },
   {
-    summary: `Diverse Portfolio Options: Whether you're inclined towards cutting-edge renewables or believe in the potential of transitional energy solutions, our diverse portfolio caters to a range of investment appetites.`,
+    header: 'Diverse Portfolio Options',
+    summary: `Whether you're inclined towards cutting-edge renewables or believe in the potential of transitional energy solutions, our diverse portfolio caters to a range of investment appetites.`,
     icon: FaShieldAlt,
     iconBg: 'orange',
     iconColor: 'white',
@@ -134,7 +170,6 @@ export const dashboardLinks = [
   {
     title: 'Funding',
     icon: FiCalendar,
-    openDropdown: openFundingDropdown,
     links: [
       {
         title: 'Deposit',
@@ -149,7 +184,6 @@ export const dashboardLinks = [
   {
     title: 'Withdrawal',
     icon: FiCalendar,
-    openDropdown: openWithdrawalDropdown,
     links: [
       {
         title: 'Withdraw',
@@ -184,7 +218,6 @@ export const dashboardLinks = [
   {
     title: 'Partnership',
     icon: FiCalendar,
-    openDropdown: openPartnershipDropdown,
     links: [
       {
         title: 'Individual',
@@ -192,7 +225,7 @@ export const dashboardLinks = [
       },
       {
         title: 'Business',
-        to: '/dashboard/partnership/individual',
+        to: '/dashboard/partnership/business',
       },
     ],
   },
@@ -219,19 +252,19 @@ export const dashboardLinks = [
 ];
 
 export const dashboardBottomLinks = [
-  {
-    title: 'Support',
-    to: '/dashboard/support',
-    icon: FiCalendar,
-  },
+  // {
+  //   title: 'Support',
+  //   to: '/dashboard/support',
+  //   icon: FiCalendar,
+  // },
   {
     title: 'Settings',
     to: '/dashboard/settings',
     icon: FiCalendar,
   },
-  // {
-  //   title: 'Logout',
-  //   to: '/dashboard/logout',
-  //   icon: FiCalendar,
-  // },
+  {
+    title: 'Logout',
+    to: '/dashboard/logout',
+    icon: FiCalendar,
+  },
 ];

@@ -1,5 +1,6 @@
 import { ServicesTypes } from '@/constants';
 import styles from './ServiceCard.module.scss';
+import IconLink from '../iconLink/IconLink';
 
 const ServiceCard: React.FC<ServicesTypes> = ({
   name,
@@ -8,13 +9,16 @@ const ServiceCard: React.FC<ServicesTypes> = ({
 }) => {
   return (
     <div className={styles.card}>
-      <div className={styles.card__icon}>
+      <div className={styles.card__header}>
         <Icon />
+        <h3>{name}</h3>
       </div>
 
-      <div className={styles.card__info}>
-        <h3>{name}</h3>
-        <p>{summary}</p>
+      <p className={styles.card__info}>{summary}</p>
+
+      {/* <IconLink text="Learn more" href="/" /> */}
+      <div className={styles.item__content_button}>
+        <IconLink text="Learn more" href={`/`} />
       </div>
     </div>
   );

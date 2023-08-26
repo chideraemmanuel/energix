@@ -1,29 +1,44 @@
 .card {
   width: min(300px, 80%);
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.2);
-  border-radius: 5px;
-  text-align: center;
-  padding: 30px 10px;
-
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // gap: 32px;
+  align-items: flex-start;
+  gap: 20px;
+  padding: var(--side-padding);
+  border-radius: 10px;
 
-  svg {
-    font-size: var(--xl-font);
-    box-sizing: content-box;
-    padding-bottom: 20px;
+  // border: 1px solid #ccfbe5;
+  border: 1px solid var(--primary-color);
+  backdrop-filter: blur(50px);
+  background-color: rgba(52, 187, 139, 0.1);
+
+  &__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: flex-start;
+    gap: 10px;
+
+    svg {
+      font-size: var(--md-font);
+      box-sizing: content-box;
+      color: #ccfbe5;
+      background-color: rgba(52, 187, 139, 0.5);
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    h3 {
+      font-size: var(--base-font);
+      padding-bottom: 10px;
+      color: var(--gray-1000);
+    }
   }
 
-  h3 {
-    font-size: var(--base-font);
-    padding-bottom: 10px;
-  }
-
-  p {
+  &__info {
     font-size: var(--sm-font);
-    color: var(--secondary-text-color);
+    // color: var(--gray-400);
+    color: var(--gray-800);
   }
 }

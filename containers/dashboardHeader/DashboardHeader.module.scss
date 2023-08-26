@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    > button {
+      display: none;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      align-items: center;
+
+      @media screen and (max-width: 820px) {
+        display: flex;
+      }
+
+      svg {
+        font-size: var(--md-font);
+      }
+    }
+
+    // .logo {
+    //   font-family: var(--tilt-prism);
+    //   color: var(--primary-color);
+    //   font-size: var(--md-font);
+    // }
+  }
+}

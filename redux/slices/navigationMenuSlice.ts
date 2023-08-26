@@ -7,15 +7,17 @@ export interface NavMenuStateTypes {
     withdrawal: 'active' | 'inactive';
     partnership: 'active' | 'inactive';
   };
+  dashoardSidebarActive: boolean;
 }
 
 const initialState: NavMenuStateTypes = {
   mobileMenuActive: false,
   dashboardNavigationDropdowns: {
-    funding: 'active',
-    withdrawal: 'active',
-    partnership: 'active',
+    funding: 'inactive',
+    withdrawal: 'inactive',
+    partnership: 'inactive',
   },
+  dashoardSidebarActive: true,
 };
 
 const navigationMenuSlice = createSlice({
@@ -40,11 +42,26 @@ const navigationMenuSlice = createSlice({
     openFundingDropdown: (state: NavMenuStateTypes) => {
       state.dashboardNavigationDropdowns.funding = 'active';
     },
+    closeFundingDropdown: (state: NavMenuStateTypes) => {
+      state.dashboardNavigationDropdowns.funding = 'inactive';
+    },
     openWithdrawalDropdown: (state: NavMenuStateTypes) => {
       state.dashboardNavigationDropdowns.withdrawal = 'active';
     },
+    closeWithdrawalDropdown: (state: NavMenuStateTypes) => {
+      state.dashboardNavigationDropdowns.withdrawal = 'inactive';
+    },
     openPartnershipDropdown: (state: NavMenuStateTypes) => {
       state.dashboardNavigationDropdowns.partnership = 'active';
+    },
+    closePartnershipDropdown: (state: NavMenuStateTypes) => {
+      state.dashboardNavigationDropdowns.partnership = 'inactive';
+    },
+    openDashboardSidebar: (state: NavMenuStateTypes) => {
+      state.dashoardSidebarActive = true;
+    },
+    closeDashboardSidebar: (state: NavMenuStateTypes) => {
+      state.dashoardSidebarActive = false;
     },
   },
 });
@@ -55,6 +72,11 @@ export const {
   openFundingDropdown,
   openWithdrawalDropdown,
   openPartnershipDropdown,
+  closeFundingDropdown,
+  closeWithdrawalDropdown,
+  closePartnershipDropdown,
+  openDashboardSidebar,
+  closeDashboardSidebar,
 } = navigationMenuSlice.actions;
 
 export default navigationMenuSlice.reducer;

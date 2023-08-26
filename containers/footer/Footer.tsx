@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './Footer.module.scss';
-import { navigationLinks } from '@/constants';
+import { footerLinks, navigationLinks } from '@/constants';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
@@ -11,13 +11,26 @@ const Footer: React.FC = () => {
           <Link href={'/'}>Ecocentury</Link>
         </div>
 
-        <ul className={styles.container__top_links}>
+        {/* <ul className={styles.container__top_links}>
           {navigationLinks.map((link, index) => (
             <li key={index}>
               <Link href={link.to}>{link.title}</Link>
             </li>
           ))}
-        </ul>
+        </ul> */}
+
+        <div className={styles.container__top_links}>
+          {footerLinks.map((link, index) => (
+            <ul key={index}>
+              <span>{link.header}</span>
+              {link.links.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.to}>{link.title}</Link>
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
 
         <ul className={styles.container__top_socials}>
           <Link href={'/'}>

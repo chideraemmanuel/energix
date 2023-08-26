@@ -15,11 +15,11 @@ const Invest: React.FC = () => {
               Our platform provides avenues that align with both sustainable
               growth and retirement planning
             </h4>
-            <p>
+            {/* <p>
               Join us in shaping the future of energy, where profitability meets
               responsibility. Whether you're considering direct investments,
               diversifying your 401(k) portfolio, or exploring IRA options
-            </p>
+            </p> */}
           </div>
 
           <div className={styles.container__text_list}>

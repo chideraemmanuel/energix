@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
           <span>Global</span>
         </Link>
 
-        <Link href={'/sign-in'} className={styles.container__buttons_signIn}>
+        <Link href={'/login'} className={styles.container__buttons_signIn}>
           Sign In
         </Link>
       </div>
