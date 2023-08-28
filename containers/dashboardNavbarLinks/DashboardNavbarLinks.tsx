@@ -18,17 +18,10 @@ import {
   openPartnershipDropdown,
   openWithdrawalDropdown,
 } from '@/redux/slices/navigationMenuSlice';
+import { usePathname } from 'next/navigation';
 
 const DashboardNavbarLinks: React.FC = () => {
-  // const [fundingDropdown, setFundingDropdown] = useState(false);
-  // const [withdrawalDropdown, setWithdrawalDropdown] = useState(false);
-  // const [partnershipDropdown, setPartnershipDropdown] = useState(false);
-
-  // const resetDropdowns = () => {
-  //   setFundingDropdown(false);
-  //   setPartnershipDropdown(false);
-  //   setWithdrawalDropdown(false);
-  // };
+  const pathname = usePathname();
 
   const { funding, partnership, withdrawal } = useSelector(
     (store: StoreTypes) => store.navigationMenu.dashboardNavigationDropdowns
@@ -68,7 +61,15 @@ const DashboardNavbarLinks: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <Link href={'/dashboard/overview'} className={styles.link}>
+      <Link
+        href={'/dashboard/overview'}
+        className={styles.link}
+        style={
+          pathname === '/dashboard/overview'
+            ? { color: '#34bb8b', backgroundColor: 'rgba(52, 187, 139, 0.2)' }
+            : undefined
+        }
+      >
         <FiFileMinus />
         <span>Overview</span>
       </Link>
@@ -89,10 +90,34 @@ const DashboardNavbarLinks: React.FC = () => {
         {funding === 'active' && (
           <ul className={styles.dropdown__list}>
             <li>
-              <Link href={'/dashboard/deposit'}>Deposit</Link>
+              <Link
+                href={'/dashboard/deposit'}
+                style={
+                  pathname === '/dashboard/deposit'
+                    ? {
+                        color: '#34bb8b',
+                        backgroundColor: 'rgba(52, 187, 139, 0.2)',
+                      }
+                    : undefined
+                }
+              >
+                Deposit
+              </Link>
             </li>
             <li>
-              <Link href={'/dashboard/deposit-history'}>Deposit History</Link>
+              <Link
+                href={'/dashboard/deposit-history'}
+                style={
+                  pathname === '/dashboard/deposit-history'
+                    ? {
+                        color: '#34bb8b',
+                        backgroundColor: 'rgba(52, 187, 139, 0.2)',
+                      }
+                    : undefined
+                }
+              >
+                Deposit History
+              </Link>
             </li>
           </ul>
         )}
@@ -114,10 +139,32 @@ const DashboardNavbarLinks: React.FC = () => {
         {withdrawal === 'active' && (
           <ul className={styles.dropdown__list}>
             <li>
-              <Link href={'/dashboard/withdraw'}>Withdraw</Link>
+              <Link
+                href={'/dashboard/withdraw'}
+                style={
+                  pathname === '/dashboard/withdraw'
+                    ? {
+                        color: '#34bb8b',
+                        backgroundColor: 'rgba(52, 187, 139, 0.2)',
+                      }
+                    : undefined
+                }
+              >
+                Withdraw
+              </Link>
             </li>
             <li>
-              <Link href={'/dashboard/withdrawal-history'}>
+              <Link
+                href={'/dashboard/withdrawal-history'}
+                style={
+                  pathname === '/dashboard/withdrawal-history'
+                    ? {
+                        color: '#34bb8b',
+                        backgroundColor: 'rgba(52, 187, 139, 0.2)',
+                      }
+                    : undefined
+                }
+              >
                 Withdrawal History
               </Link>
             </li>
@@ -125,22 +172,66 @@ const DashboardNavbarLinks: React.FC = () => {
         )}
       </div>
 
-      <Link href={'/dashboard/cart'} className={styles.link}>
+      <Link
+        href={'/dashboard/cart'}
+        className={styles.link}
+        style={
+          pathname === '/dashboard/cart'
+            ? {
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
+              }
+            : undefined
+        }
+      >
         <FiFileMinus />
         <span>Cart</span>
       </Link>
 
-      <Link href={'/dashboard/account-statement'} className={styles.link}>
+      <Link
+        href={'/dashboard/account-statement'}
+        className={styles.link}
+        style={
+          pathname === '/dashboard/account-statement'
+            ? {
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
+              }
+            : undefined
+        }
+      >
         <FiFileMinus />
         <span>Account Statement</span>
       </Link>
 
-      <Link href={'/dashboard/portfolios'} className={styles.link}>
+      <Link
+        href={'/dashboard/portfolios'}
+        className={styles.link}
+        style={
+          pathname === '/dashboard/portfolios'
+            ? {
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
+              }
+            : undefined
+        }
+      >
         <FiFileMinus />
         <span>Portfolios</span>
       </Link>
 
-      <Link href={'/dashboard/retirement'} className={styles.link}>
+      <Link
+        href={'/dashboard/retirement'}
+        className={styles.link}
+        style={
+          pathname === '/dashboard/retirement'
+            ? {
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
+              }
+            : undefined
+        }
+      >
         <FiFileMinus />
         <span>Retirement</span>
       </Link>
@@ -170,27 +261,82 @@ const DashboardNavbarLinks: React.FC = () => {
         )}
       </div>
 
-      <Link href={'/dashboard/membership'} className={styles.link}>
+      <Link
+        href={'/dashboard/membership'}
+        className={styles.link}
+        style={
+          pathname === '/dashboard/membership'
+            ? {
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
+              }
+            : undefined
+        }
+      >
         <FiFileMinus />
         <span>Membership</span>
       </Link>
 
-      <Link href={'/dashboard/referral'} className={styles.link}>
+      <Link
+        href={'/dashboard/referral'}
+        className={styles.link}
+        style={
+          pathname === '/dashboard/referral'
+            ? {
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
+              }
+            : undefined
+        }
+      >
         <FiFileMinus />
         <span>Referral</span>
       </Link>
 
-      <Link href={'/dashboard/achievements'} className={styles.link}>
+      <Link
+        href={'/dashboard/achievements'}
+        className={styles.link}
+        style={
+          pathname === '/dashboard/achievements'
+            ? {
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
+              }
+            : undefined
+        }
+      >
         <FiFileMinus />
         <span>Achievements</span>
       </Link>
 
-      <Link href={'/dashboard/notifications'} className={styles.link}>
+      <Link
+        href={'/dashboard/notifications'}
+        className={styles.link}
+        style={
+          pathname === '/dashboard/notifications'
+            ? {
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
+              }
+            : undefined
+        }
+      >
         <FiFileMinus />
         <span>Notifications</span>
       </Link>
 
-      <Link href={'/dashboard/support'} className={styles.link}>
+      <Link
+        href={'/dashboard/support'}
+        className={styles.link}
+        style={
+          pathname === '/dashboard/support'
+            ? {
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
+              }
+            : undefined
+        }
+      >
         <FiFileMinus />
         <span>Support</span>
       </Link>

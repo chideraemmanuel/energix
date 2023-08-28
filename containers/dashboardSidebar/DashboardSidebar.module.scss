@@ -39,7 +39,8 @@
 .container {
   .desktop {
     height: 100%;
-    background-color: burlywood;
+    // background-color: burlywood;
+    background-color: #fff;
     padding: 20px 10px;
     overflow-y: scroll;
     padding-top: calc(40px + var(--xl-font)) !important;
@@ -78,7 +79,8 @@
 
   .tablet {
     height: 100%;
-    background-color: burlywood;
+    // background-color: burlywood;
+    background-color: #fff;
     padding: 20px 10px;
     overflow-y: scroll;
     padding-top: calc(40px + var(--xl-font)) !important;

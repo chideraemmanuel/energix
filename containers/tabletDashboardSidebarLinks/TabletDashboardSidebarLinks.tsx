@@ -15,8 +15,11 @@ import {
 } from '@/redux/slices/navigationMenuSlice';
 import Link from 'next/link';
 import { FiChevronDown, FiFileMinus } from 'react-icons/fi';
+import { usePathname } from 'next/navigation';
 
 const TabletDashboardSidebarLinks: React.FC = () => {
+  const pathname = usePathname();
+
   const { funding, partnership, withdrawal } = useSelector(
     (store: StoreTypes) => store.navigationMenu.dashboardNavigationDropdowns
   );
@@ -66,14 +69,29 @@ const TabletDashboardSidebarLinks: React.FC = () => {
         href={'/dashboard/overview'}
         className={styles.link}
         style={
-          dashoardSidebarActive
+          pathname === '/dashboard/overview'
+            ? {
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
+              }
+            : pathname === '/dashboard/overview' && dashoardSidebarActive
             ? {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '7px',
+                color: '#34bb8b',
+                backgroundColor: 'rgba(52, 187, 139, 0.2)',
               }
             : undefined
         }
+        // style={
+        //   pathname === '/dashboard/notifications'
+        //     ? {
+        //         color: '#34bb8b',
+        //         backgroundColor: 'rgba(52, 187, 139, 0.2)',
+        //       }
+        //     : undefined
+        // }
       >
         <FiFileMinus />
         <span
