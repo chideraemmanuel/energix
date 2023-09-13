@@ -114,16 +114,16 @@ export interface SlideItemTypes {
 
 export const resourcesSliderItems: SlideItemTypes[] = [
   {
-    heading: 'Ecocentury Lifestyle Community',
+    heading: 'Energix Lifestyle Community',
     summary:
-      'Living the best lifestyle, creating the best future for ourselves and our kids, generations to come, and the world at large, we at Ecocentury Energy aim to create a sustainable and enabling environment.',
+      'Living the best lifestyle, creating the best future for ourselves and our kids, generations to come, and the world at large, we at Energix Energy aim to create a sustainable and enabling environment.',
     image: image,
     link: '/',
   },
   {
-    heading: 'Ecocentury Startups and Ventures',
+    heading: 'Energix Startups and Ventures',
     summary:
-      'At Ecocentury, we help startups grow their businesses by investing in them as much as they invest in us.',
+      'At Energix, we help startups grow their businesses by investing in them as much as they invest in us.',
     image: image2,
     link: '/',
   },

@@ -54,7 +54,7 @@ const SignUpPage: React.FC = () => {
       {signUpModalActive && <SignInModal />}
       <div className={styles.grid} onClick={() => dispatch(closeSignUpModal())}>
         <div className={styles.info}>
-          <Link href={'/'}>Ecocentury</Link>
+          <Link href={'/'}>Energix</Link>
 
           <div className={styles.info__text}>
             <h2>Start your journey with us.</h2>
@@ -75,7 +75,7 @@ const SignUpPage: React.FC = () => {
           <div className={styles.form__overlay}>
             <form onSubmit={(e) => handleSubmit(e)}>
               <Link href={'/'} className={styles.formLogo}>
-                Ecocentury
+                Energix
               </Link>
               <div className={styles.form__overlay_header}>
                 <span>Sign up</span>

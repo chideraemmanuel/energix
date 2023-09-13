@@ -10,7 +10,7 @@ const Invest: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.container__text}>
           <div className={styles.container__text_header}>
-            <span>Why Ecocentury?</span>
+            <span>Why Energix?</span>
             <h4>
               Our platform provides avenues that align with both sustainable
               growth and retirement planning

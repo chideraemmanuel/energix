@@ -20,7 +20,7 @@ interface UserTypes {
 }
 
 export async function GET(request: NextRequest) {
-  //   const token = request.cookies.get('ecocentury-token')?.value;
+  //   const token = request.cookies.get('energix-token')?.value;
   const token = request.cookies.get('token')?.value;
 
   if (!token) {

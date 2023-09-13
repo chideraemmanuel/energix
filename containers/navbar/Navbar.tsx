@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
       </div>
       {mobileMenuActive && <MobileMenu />}
       <div className={styles.container__logo}>
-        <Link href={'/'}>Ecocentury</Link>
+        <Link href={'/'}>Energix</Link>
       </div>
 
       <ul className={styles.container__links}>

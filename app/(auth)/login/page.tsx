@@ -37,7 +37,7 @@ const LoginPage: React.FC = () => {
       {isLoggingIn && <FullScreenLoader />}
       <div className={styles.grid}>
         <div className={styles.info}>
-          <Link href={'/'}>Ecocentury</Link>
+          <Link href={'/'}>Energix</Link>
 
           <div className={styles.info__text}>
             <h2>Start your journey with us.</h2>
@@ -58,7 +58,7 @@ const LoginPage: React.FC = () => {
           <div className={styles.form__overlay}>
             <form onSubmit={(e) => handleSubmit(e)}>
               <Link href={'/'} className={styles.formLogo}>
-                Ecocentury
+                Energix
               </Link>
               <div className={styles.form__overlay_header}>
                 <span>Welcome back!</span>

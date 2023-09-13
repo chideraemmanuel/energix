@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.container__top}>
         <div className={styles.container__top_logo}>
-          <Link href={'/'}>Ecocentury</Link>
+          <Link href={'/'}>Energix</Link>
         </div>
 
         {/* <ul className={styles.container__top_links}>
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className={styles.container__copyright}>
-        <span>&copy; 2023 Ecocentury. All rights reserved.</span>
+        <span>&copy; 2023 Energix. All rights reserved.</span>
       </div>
     </div>
   );

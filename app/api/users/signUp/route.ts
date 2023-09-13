@@ -68,13 +68,20 @@ export async function POST(request: NextRequest) {
     // console.log(token);
 
     // set cookie
-    const response = NextResponse.next();
-    const cookie = response.cookies.set('ecocentury-token', token, {
-      maxAge: 60 * 60 * 24 * 7, // 1 week
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // Secure in production
-    });
+    // const response = NextResponse.next();
+    // const cookie = response.cookies.set('energix-token', token, {
+    //   maxAge: 60 * 60 * 24 * 7, // 1 week
+    //   httpOnly: true,
+    //   secure: process.env.NODE_ENV === 'production', // Secure in production
+    // });
 
+    // console.log(cookie);
+
+    const cookie = NextResponse.next().cookies.set('jwt-token', token, {
+      maxAge: 1000,
+      httpOnly: true,
+      secure: true,
+    });
     console.log(cookie);
 
     // return user credentials

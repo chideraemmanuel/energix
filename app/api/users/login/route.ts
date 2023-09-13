@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
 
       // set cookie
       // const response = NextResponse.next();
-      // const cookie = response.cookies.set('ecocentury-token', token, {
+      // const cookie = response.cookies.set('energix-token', token, {
       //   maxAge: 60 * 60 * 24 * 7, // 1 week
       //   httpOnly: true,
       //   secure: process.env.NODE_ENV === 'production', // Secure in production
